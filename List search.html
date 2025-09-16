@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Searchable Checkbox List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+
+  <div class="mb-3">
+    <input type="text" id="searchBox" class="form-control" placeholder="Search checkbox...">
+  </div>
+
+<ul class="list-group" id="checkboxList">
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="apple"> Apple
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="banana"> Banana
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="orange"> Orange
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="mango"> Mango
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="grape"> Grape
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="pineapple"> Pineapple
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="watermelon"> Watermelon
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="papaya"> Papaya
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="kiwi"> Kiwi
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="strawberry"> Strawberry
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="blueberry"> Blueberry
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="blackberry"> Blackberry
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="pear"> Pear
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="peach"> Peach
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="plum"> Plum
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="cherry"> Cherry
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="melon"> Melon
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="apricot"> Apricot
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="lime"> Lime
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="coconut"> Coconut
+  </li>
+</ul>
+
+
+  <script>
+    const searchBox = document.getElementById("searchBox");
+    const listItems = document.querySelectorAll("#checkboxList li");
+
+    searchBox.addEventListener("keyup", function () {
+      const filter = this.value.toLowerCase();
+
+      listItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? "" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
